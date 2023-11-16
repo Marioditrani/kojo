@@ -20,7 +20,7 @@
 
 <template>
   <div class="about">
-    
+    <img src="src/assets/img/crop.png" alt="" class="bacchette">
     <div class="main-about">
       <div class="top-about">
         <img src="src/assets/img/cuoco-sushi 1.png" alt="">
@@ -30,22 +30,22 @@
         <div class="post">
           
           <div class="text">
-            <h4>LA NOSTRA STORIA...</h4>
+            <h4>IL NOSTRO MODO DI CUCINARE</h4>
             <p>
-              Qui, dal marzo del 2017, si servono pizze soffici, gustose e croccanti, preparate con impasti naturali a lunga lievitazione, apprezzati per la leggerezza e la facile digeribilità.
+              Esplorate le radici profonde della cucina cinese attraverso piatti come il "Jiaozi", ravioli tradizionali cinesi, riempiti di sapori autentici che risalgono a generazioni. Dall'agrodolce.
             </p>
           </div>
-          <img src="../assets/img/abus.png" alt="">
+          <img src="src/assets/img/cuochi-sushi-2 1.png" alt="">
         </div>
         <div class="post">
           
           <div class="text">
-            <h4>LA NOSTRA STORIA...</h4>
+            <h4>IL NOSTRO MODO DI CUCINARE</h4>
             <p>
-              Il Capriccio di Leo è una pizzeria a conduzione familiare con un’ampia sala e servizio d’asporto. Punto di forza del locale è la sua pizza ad alta digeribilità cotta nel forno a pietra, con pasta sottile e preparata con un impasto a lunga lievitazione. 
+              Esplorate le radici profonde della cucina cinese attraverso piatti come il "Jiaozi", ravioli tradizionali cinesi, riempiti di sapori autentici che risalgono a generazioni. Dall'agrodolce.
             </p>
           </div>
-          <img src="../assets/img/abus.png" alt="">
+          <img src="src/assets/img/cuochi-sushi-2 1.png" alt="">
         </div>
         
         
@@ -103,6 +103,14 @@
   left: 0;
   height: 69%;
   width: 100%;
+
+  .bacchette{
+    max-width: 200px;
+    position: fixed;
+    bottom: 150px;
+    left: -30px;
+    transform: scaleX(-1); 
+  }
   .main-about{
     margin:auto;
     width: 70%;
@@ -143,34 +151,38 @@
       .p2{
         background-image: url(../assets/img/farine.png) !important;
       }
+
+      
       .post{
-        background-image: url(../assets/img/abus.png);
         @include dfc;
+        flex-direction: reverse;
         z-index: 1;
-        gap: 2rem;
+        gap: 8rem;
         padding: 2rem;
         background-position: top;
         background-size: cover;
         position: relative;
         .text{
-          
+          text-align: center;
           position: relative;
           z-index: 3;
           display: flex;
           flex-direction: column;
-          gap: .5rem;
-          width: 30%;
+          gap: 5rem;
+          width: 40%;
           h4{
-            font-size: 18px;
+            font-size: 22px;
+            
           }
           p{
-            font-size: 10px;
+            font-size: 20px;
           }
         }
         img{
           position: relative;
           z-index: 3;
           width: 43%;
+          max-width: 400px;
           box-shadow: 17px 10px 38px black;
         }
       }

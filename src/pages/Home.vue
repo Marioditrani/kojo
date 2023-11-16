@@ -83,7 +83,7 @@
 
 .home{
     background-color: #270000;
-    height: 70%;
+    height: 69%;
     width: 100%;
     position: fixed;
     bottom: 0;

@@ -14,9 +14,18 @@
             arrCategory:[],
             categoryId: 0,
             actvcat: 1,
+            catinput:0,
         }
     },
     methods:{
+      catopen(){
+        if (this.catinput){
+          this.catinput = 0
+        }else{
+          this.catinput = 1
+        }
+        console.log(this.catinput)
+      },
       getProduct(cat){
         this.categoryId = cat,
         axios
@@ -87,7 +96,6 @@
 
 <template>
   <div class="menu">
-    <AppNav class="nav"/>
     <div class="menu-cont">
       <div class="menu-left">
         <img src="src/assets/img/crop.png" alt="" class="bac">
@@ -100,11 +108,15 @@
             <p>Le delizie del nostro menu aspettano solo te...</p>
           </div>
           <div class="menu-top-right">
-            <div class="categorie">
+            <div class="one-category" @click="catopen(catinput)" :class="catinput ? 'cat-on': 'cat-off'">
+              <span>categorie</span>
+            </div>
+            <div class="categorie"   :class="catinput ? 'cat-off': 'cat-on'">
               <div v-for="cat in arrCategory" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
-                <span :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
+                <span @click="catopen(catinput)" :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
               </div>
             </div>
+            
             
           </div>
         </div>
@@ -160,23 +172,19 @@
 .menu{
   width: 100%;
   overflow: hidden;
-  height: 70%;
   display: flex;
   flex-direction:column;
   position: fixed;
   top: 0;
   left: 0;
-  height: 96%;
+  
 
-  .nav{
-    height: 30%;
-  }
   .menu-cont{
     display: flex;
     background-color: #270000;
     position: fixed;
     bottom: 0;
-    height: 70%;
+    height: 69%;
     width: 100%;
     padding: 1rem 1rem ;
 
@@ -305,16 +313,48 @@
 }
 
 /*** */
-
+.one-category{
+  background-color: #523333;
+  width: 350px;
+  
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 1.5em 1em;
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  border: 5px solid white;
+  border-radius: 50px;
+  margin: 40px ;
+  span{
+    font-size: 30px;
+    
+    text-align: center;
+    transition: all .5s;
+    text-transform: uppercase;
+    
+    letter-spacing: .1em;
+  }
+}
 .categorie {
-  max-width: 450px;
-  width: 100%;
-  height: 160px;
+  box-shadow: -40px 50px 100px black ;
+  background-color: #523333;
+  max-width: 600px;
+  width: 90%;
+  height: 300px;
   border-radius: 4px;
   display: flex;
+  flex-direction: column;
   gap: 5px;
-  padding: .4em;
+  padding: 1.5em 1em;
   margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  border: 5px solid white;
+  border-radius: 20px;
   .category {
    height: 100%;
    flex: 1;
@@ -325,13 +365,13 @@
    background-color: $c-footer-nav ;
    border: 1px solid $c-nav-link;
    display: flex;
+   
    justify-content: center;
    align-items: center;
    span {
-    min-width: 14em;
+    min-width: 30em;
     padding: .5em;
     text-align: center;
-    transform: rotate(-90deg);
     transition: all .5s;
     text-transform: uppercase;
     color: $c-nav-link;
@@ -339,8 +379,7 @@
    }
   }
   .category:hover {
-    flex: 5;
-    background-color: $c-header !important;
+    
   }
   .category:hover span {
     color: white;
@@ -349,11 +388,11 @@
 }
 
 .category-on {
-  flex: 2!important;
+  
   background-color: $c-header !important;
 }
 .category-on:hover {
-  flex: 5!important;
+  
   background-color: $c-header !important;
 }
 .span-on{
@@ -361,6 +400,7 @@
 
 }
 
+.cat-off{display: none;}
 
 /***** */
 

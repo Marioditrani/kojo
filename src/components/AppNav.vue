@@ -44,7 +44,7 @@
           <router-link :to="{ name: 'prenotaServizio' }" :class="state.actvPage == 6 ? 'active-link' : '' " class="nav-link" @click="state.updateActvPage(6)" >Prenota tavolo</router-link>
         </div>
         <div class="bottom-nav">
-          <router-link :to="{ name: 'chi-siamo' }" class="chi-siamo" ><span>Chi siamo?</span></router-link>
+          <router-link :to="{ name: 'chi-siamo' }" class="chi-siamo" ><p>Chi siamo?</p></router-link>
           <router-link :to="{ name: 'contatti' }" class="contatti" > <span>Contatti</span></router-link>
         </div>
       </div>
@@ -85,18 +85,19 @@
     .main-nav{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
       height: 100%;
+      
       .bg-nav{
         background-color: #712A2A;
         display: flex;
         justify-content: space-between;
         width: 100%;
         padding: 25px 150px 25px 45px;
-        border: 5px solid white;
+        border: 10px solid white;
         font-size: 20px;
         text-transform: uppercase;
+        margin-top: 85px;
       }
 
       .bottom-nav{
@@ -104,12 +105,28 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        .chi-siamo{
+          transform:skew(30deg);
+          position: relative;
+          bottom: 1px;
+            left: -15px;
+            z-index: 1;
+           
+          p{
+            transform:skew(-30deg);
+            
+          }
+        }
         
         
         
         .contatti, .chi-siamo{
-          background-color: #523333;
-          padding: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #270000;
+          width: 200px;
+          height: 50px;
           border: 5px solid white;
           
           
