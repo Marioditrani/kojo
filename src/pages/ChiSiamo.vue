@@ -148,10 +148,7 @@
       .post:nth-child(even){
         flex-direction: row-reverse;
       }
-      .p2{
-        background-image: url(../assets/img/farine.png) !important;
-      }
-
+      
       
       .post{
         @include dfc;

@@ -108,10 +108,10 @@
             <p>Le delizie del nostro menu aspettano solo te...</p>
           </div>
           <div class="menu-top-right">
-            <div class="one-category" @click="catopen(catinput)" :class="catinput ? 'cat-on': 'cat-off'">
+            <div class="one-category" @click="catopen(catinput)" :class="catinput ? 'cat-off': 'cat-on'">
               <span>categorie</span>
             </div>
-            <div class="categorie"   :class="catinput ? 'cat-off': 'cat-on'">
+            <div class="categorie"   :class="catinput ? 'cat-on': 'cat-off'">
               <div v-for="cat in arrCategory" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
                 <span @click="catopen(catinput)" :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
               </div>
@@ -258,7 +258,6 @@
         }
         .c-tp{
           background-color: #AB2F2F;
-;
           position: relative;
           z-index: 10000;
           width: 100%;

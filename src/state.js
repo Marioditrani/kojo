@@ -25,7 +25,7 @@ export const state = reactive({
     fakemenu: [
         [
             {
-                img: '../../public/pizza-alto.png',
+                img: '../src/assets/img/imgsushi.png',
                 name: 'NOME PIATTO SUSHI',
                 tags: [{ name: 'pomodoro' }, { name: 'pomodoro' }, { name: 'pomodoro' },],
                 prezzo: '8,00€'
@@ -37,7 +37,7 @@ export const state = reactive({
                 prezzo: '8,00€'
             },
             {
-                img: '../../public/pizza-alto.png',
+                img: '../../src/assets/img/imgsushi.png',
                 name: 'NOME PIATTO SUSHI',
                 tags: [{ name: 'pomodoro' }, { name: 'pomodoro' }, { name: 'pomodoro' },],
                 prezzo: '8,00€'
@@ -70,49 +70,49 @@ export const state = reactive({
         ],
         [
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'MARINARA',
                 tags: 'pomodoro, origano, aglio',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'MARGHERITA',
                 tags: 'pomodoro, mozzarella fior di latte, basilico',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'SALSICCIA',
                 tags: 'pomodoro, mozzarella fior di latte, salsiccia',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'WÜRSTEL',
                 tags: 'pomodoro, mozzarella fior di latte, würstel',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'DIAVOLA',
                 tags: 'pomodoro, mozzarella fior di latte, ventricina piccante',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'CAPRICCIOSA',
                 tags: 'pomodoro, mozzarella fior di latte, carciofini, funghi, olive nere',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: '4 STAGIONI',
                 tags: 'pomodoro, mozzarella fior di latte, carciofini, funghi, olive nere ?? ??',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'LA TEDESCA',
                 tags: 'pomodoro, mozzarella fior di latte, patate, würstel',
                 prezzo: '8,00€'
@@ -122,67 +122,67 @@ export const state = reactive({
         ],
         [
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'FORNARINA',
                 tags: 'cipolla o rosmarino',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'CASERECCIA',
                 tags: 'mozzarella, patate, salsiccia, rosmarino',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'GREEN POWER',
                 tags: 'mozzarella, verdure di stagione',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: '4 FORMAGG',
                 tags: 'mozzarella, gorgonzola, pecorino, grana',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'RADICCHIO',
                 tags: 'mozzarella, radicchio, gorgonzola, noci',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'ADIGE',
                 tags: 'mozzarella, speck, noci, gorgonzola',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'TARTUFATA',
                 tags: 'mozzarella, cotto, funghi, salsa tartufata',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'NORCINA',
                 tags: 'mozzarella fior di latte, salsiccia, salsa tartufata, noci, pecorino',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'GENOVESE',
                 tags: 'mozzarella fior di latte, pesto di basilico, pomodorino ciliegino, pinoli',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'PESTO AFFUMICATO',
                 tags: 'mozzarella, pesto di basilico, pomodorino giallo, pancetta affumicata',
                 prezzo: '8,00€'
             },
             {
-                img: '/src/assets/img/pizza-alto.png',
+                img: 'src/assets/img/imgsushi.png',
                 name: 'BOSCAIOLA',
                 tags: 'mozzarella, funghi, pancetta, cipolla, olive nere, pomodorino ciliegino',
                 prezzo: '8,00€'

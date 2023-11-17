@@ -105,18 +105,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        .chi-siamo{
-          transform:skew(30deg);
-          position: relative;
-          bottom: 1px;
-            left: -15px;
-            z-index: 1;
-           
-          p{
-            transform:skew(-30deg);
-            
-          }
-        }
+        
         
         
         
@@ -130,6 +119,19 @@
           border: 5px solid white;
           
           
+        }
+        .chi-siamo{
+          transform:skew(30deg);
+          position: relative;
+          bottom: 1px;
+          left: -15px;
+          z-index: 1;
+          border-left: 0px;
+          
+          p{
+            transform:skew(-30deg);
+            
+          }
         }
         
         

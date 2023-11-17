@@ -15,10 +15,18 @@
             name:'',
             phone:'',
             time:'',
-
+            catinput:0,
         }
     },
     methods:{
+      catopen(){
+        if (this.catinput){
+          this.catinput = 0
+        }else{
+          this.catinput = 1
+        }
+        console.log(this.catinput)
+      },
       getProduct(cat){
         this.categoryId = cat,
         axios
@@ -188,32 +196,40 @@
 <!-- :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on tag'" -->
 <template>
  <div class="prenota">
-    <sh/>
+    
     <div class="prenota-cont">
-
-      <h1>Prenota il tuo Asporto</h1>
-      <div class="categorie">
-        <div v-for="cat in arrCategory" :key="cat.id" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
-          <span :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
+      <div class="top-prenota">
+        <div class="left-top">
+          <h1>Prenota il tuo Asporto</h1>
         </div>
-      </div>
-      <div class="cart">
-        <div class="top-cart" @click="opencart">
-          <svg   xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
-          <div class="state.totcart">
-            {{ getPrice(state.totCart)}}
+        <div class="right-top">
+          <div class="one-category" @click="catopen(catinput)" :class="catinput ?  'cat-off': 'cat-on'">
+              <span>categorie</span>
+            </div>
+          <div class="categorie"   :class="catinput ? 'cat-on': 'cat-off'">
+            <div v-for="cat in arrCategory" :key="cat.id" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
+              <span @click="catopen(catinput)" :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
+            </div>
           </div>
-
-        </div>
-        <div :class="state.sideCartValue ? 'content-cart' : 'ccoff'" >
-          <div class="span" v-if="!state.arrCart.length && !state.sideCartValue">Il carrello è vuoto</div>
-          <div v-for="item in state.arrCart" :class="state.sideCartValue ?  'item-off' : 'item-on'" :key="item.id">
-            <div>{{ item.title }}</div>
-            <div>* {{ item.counter }}</div>
-            <div>{{ getPrice(item.totprice) }}</div>
-            <svg :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on'" @click="removeItem(item.title)"  style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-trash" viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" fill="white"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" fill="white"></path> </svg>
+          <div class="cart">
+            <div class="top-cart" @click="opencart">
+              <svg   xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
+              <!--<div class="state.totcart">
+                {{ getPrice(state.totCart)}}
+              </div>
+              -->
+            </div>
+            <div :class="state.sideCartValue ? 'content-cart' : 'ccoff'" >
+              <div class="span" v-if="!state.arrCart.length && !state.sideCartValue">Il carrello è vuoto</div>
+              <div v-for="item in state.arrCart" :class="state.sideCartValue ?  'item-off' : 'item-on'" :key="item.id">
+                <div>{{ item.title }}</div>
+                <div>* {{ item.counter }}</div>
+                <div>{{ getPrice(item.totprice) }}</div>
+                <svg :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on'" @click="removeItem(item.title)"  style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-trash" viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" fill="white"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" fill="white"></path> </svg>
+              </div>
+              <router-link :to="{ name: 'conferma' }" v-if="state.arrCart.length && !state.sideCartValue" class="next">Completa la tua ordinazione</router-link>
+            </div>
           </div>
-          <router-link :to="{ name: 'conferma' }" v-if="state.arrCart.length && !state.sideCartValue" class="next">Completa la tua ordinazione</router-link>
         </div>
       </div>
       
@@ -222,16 +238,16 @@
       <div class="card-wrap"  v-for="item in arrProduct" :key="item.id">
         <div class="card">
           <div class="title">{{ item.name }}</div>
-        <img :src="state.getImageUrl(item.image)" alt="">
+        <img src="src/assets/img/imgsushi.png" alt="">
         <div class="c-tp">
           <div class="tags"> <span>{{fixtag(item.tags) }}</span></div>
           <div class="price">{{ getPrice(item.price) }}</div>
         </div>
         <div class="add">
           <div class="sec">
-            <span class="plus" @click="upCounter(item.id)" >+</span>
-            <span class="counter">{{ item.counter }}</span>
             <span class="minus"  @click="downCounter(item.id)">-</span>
+            <span class="counter">{{ item.counter }}</span>
+            <span class="plus" @click="upCounter(item.id)" >+</span>
           </div>
          <div class="mybtn" @click="addItem(item.name, item.counter, item.price, item.id)">aggiungi</div>
         </div>
@@ -277,15 +293,17 @@
 
 .prenota{
   overflow: hidden;
-  height: 100vh;
+  height: 69%;
   display: flex;
   flex-direction: column;
   position: fixed;
-    top: 0;
-    left: 0;
-    height: 96%;
+  bottom: 0;
+  left: 0;
+    
 
   .prenota-cont{
+    
+    background-color: #270000;
     overflow: auto;
     height: 100%;
     padding: 1rem 1rem ;
@@ -293,9 +311,15 @@
       text-align: center;
       text-transform: uppercase;
       padding: 1rem;
-      font-size: 30px;
+      font-size: 50px;
     }
     
+    .top-prenota{
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      margin: auto;
+    }
     
     .main-prenota{
       margin-top: 7rem;
@@ -311,7 +335,7 @@
         .add{
           position: absolute;
           //background-color: red;
-          bottom: -70px;
+          bottom: -50px;
           left: 0;
           width: 100%;
           @include dfc;
@@ -321,26 +345,26 @@
               gap: .5rem;
 
               .plus, .minus{
-                height: 2rem;
-                width: 2rem;
+                height: 3rem;
+                width: 3rem;
                 @include dfc;
                 border: 2px solid white;
-                border-radius: 20px;
+                border-radius: 50px;
+                font-size: 25px;
               }
             }
             .mybtn{
-              padding: 5px 25px;
+              padding: .5rem 2rem;
               text-transform: uppercase;
               border: 2px solid white;
               border-radius: 20px;
-
+              font-size: 25px;
             }
             
           }
 
         .card{
-          width: 100%;
-          background-color: #410606;
+        width: 100%;
         border-radius: 10px;
         padding: 20px;
         position: relative;
@@ -352,32 +376,34 @@
           
           img{
           position: absolute;
-          top: -75px;
+          top: -160px;
           left: 0;
           right: 0;
           margin: auto;
-          border-radius: $h-c;
-          width: $h-c;
-          aspect-ratio: 1;
+          width: 300px;
+          
           }
           .title{
-            text-align: center;
+          font-size: 20px;
           width: 100% ;
           text-transform: upercase;
           position: absolute;
-          left:0;
-          top: -120px;
-          z-index: 2;
+          left:45px;
+          top:20px;
+          z-index: 10001;
+          padding: .5rem;
           }
           .c-tp{
-            width: 100%;
+          background-color: #AB2F2F;
+          position: relative;
+          z-index: 10000;
+          width: 100%;
           height: 100%;
           display: flex;
           flex-direction: column;
-          
-          padding-top: 100px;
+          padding: 2rem;
+          border-radius: 20px;
           justify-content: space-between;
-          
           
             
             .tags, .price{
@@ -389,7 +415,7 @@
             .tags{
   
               display: flex;
-            padding-top: .5rem;
+            padding-top: 1rem;
             padding-right: .5rem;
             span{
               font-size: 13px;
@@ -418,61 +444,94 @@
 }
 
 /*** */
-
-.categorie {
-  max-width: 450px;
-  width: 100%;
-  height: 160px;
-  border-radius: 4px;
-  padding-bottom: .4rem;
-  margin: 0 auto;
+.one-category{
+  background-color: #523333;
+  width: 350px;
+  
+  height: 80px;
   display: flex;
-  gap: 5px;
-  .category {
-    height: 100%;
-    flex: 1;
-    overflow: hidden;
-    cursor:grab;
-    border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 1.5em 1em;
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  border: 5px solid white;
+  border-radius: 50px;
+  margin: 40px ;
+  span{
+    font-size: 30px;
+    
+    text-align: center;
     transition: all .5s;
-    background-color: $c-footer-nav ;
-    border: 1px solid $c-nav-link;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
-      min-width: 14em;
-      padding: .5em;
-      text-align: center;
-      transform: rotate(-90deg);
-      transition: all .5s;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: $c-nav-link;
-    }
+    text-transform: uppercase;
+    
+    letter-spacing: .1em;
+  }
+}
+.categorie {
+  box-shadow: -40px 50px 100px black ;
+  background-color: #523333;
+  max-width: 600px;
+  width: 90%;
+  height: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1.5em 1em;
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  border: 5px solid white;
+  border-radius: 20px;
+  .category {
+   height: 100%;
+   flex: 1;
+   overflow: hidden;
+   cursor:grab;
+   border-radius: 2px;
+   transition: all .5s;
+   background-color: $c-footer-nav ;
+   border: 1px solid $c-nav-link;
+   display: flex;
+   
+   justify-content: center;
+   align-items: center;
+   span {
+    min-width: 30em;
+    padding: .5em;
+    text-align: center;
+    transition: all .5s;
+    text-transform: uppercase;
+    color: $c-nav-link;
+    letter-spacing: .1em;
+   }
   }
   .category:hover {
-    flex: 5;
-    background-color: $c-header !important;
+    
   }
   .category:hover span {
     color: white;
-    transform: rotate(0);
+   transform: rotate(0);
   }
 }
 
 .category-on {
-  flex: 2!important;
+  
   background-color: $c-header !important;
 }
 .category-on:hover {
-  flex: 5!important;
+  
   background-color: $c-header !important;
 }
 .span-on{
   color: white!important;;
-  
+
 }
+
+.cat-off{display: none;}
 /***** */
 .cart{
   color: $c-nav-link;
@@ -481,7 +540,7 @@
   background-color: $c-header;
   max-width: 450px;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 50px;
   padding: .4rem;
   margin: 0 auto;
   .top-cart{
@@ -498,6 +557,7 @@
     border-radius: 5px;
   }
 .content-cart{
+  width: 100px;
   height: 0;
   padding: 0rem;
   display: flex;

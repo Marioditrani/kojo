@@ -227,17 +227,14 @@ export default {
 
 <template>
  <div class="prenota">
-    <sh/>
     <div class="prenota-cont">
 
-      <h1>Prenota il tuo Asporto</h1>
+      <h1>COMPLETA IL TUO ORDINE</h1>
 
       <div class="cart">
         <div class="top-cart">
-          <svg   xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
-          <div class="state.totcart">
-            {{ getPrice(state.totCart)}}
-          </div>
+          <svg  id="cart-svg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
+          
 
         </div>
         <div :class="state.sideCartValue ? 'content-cart' : 'ccoff'" >
@@ -245,11 +242,20 @@ export default {
           <router-link :to="{ name: 'prenota' } "  v-if="!state.arrCart.length && !state.sideCartValue">Torna ad ORDINA D'ASPORTO</router-link>
           <div v-for="item in state.arrCart" :class="state.sideCartValue ?  'item-off' : 'item-on'" :key="item.id">
             <div>{{ item.title }}</div>
-            <div>* {{ item.counter }}</div>
             <div>{{ getPrice(item.totprice) }}</div>
-            <svg :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on'" @click="removeItem(item.title)"  style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-trash" viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" fill="white"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" fill="white"></path> </svg>
+            <div>x {{ item.counter }}</div>
+            <svg :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on'" @click="removeItem(item.title)"  style="color: white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="current-color" class="bi bi-trash" viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" fill="white"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" fill="white"></path> </svg>
           </div>
-          
+          <div class="bottom-cart">
+            <router-link :to="{ name: 'prenota' } " class="add-product" >AGGIUNGI ALTRI PRODOTTI</router-link>
+            <div class="state.totcart">
+              <div class="right-cart">
+                <span>TOTALE</span>
+                {{ getPrice(state.totCart)}}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
       <div v-if="cartError" class="carterror">
@@ -293,11 +299,19 @@ export default {
             </div>
             <div v-if="timeError" id="timeError">{{ timeError }}</div>
         </div>
-  
+        
+        <div class="condizioni">
+          <div class="top">
+            <input type="checkbox">
+            <p>Accetta i termini e le condizioni per il trattamento dei dati</p>
+
+          </div>
+          <div v-if="nameError" id="nameError">{{ nameError }}</div>
+        </div>
         <button v-if="!loading"
         class="btn-send"           
         @click.prevent="sendOrder"       
-        data-action='submit'>conferma</button>
+        data-action='submit'>INVIA ORDINE</button>
   
       </form>
     </div>
@@ -321,6 +335,21 @@ export default {
 <style scoped lang="scss">
 @use "../assets/styles/general.scss" as *;
 
+.bottom-cart{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .add-product{
+    border: 3px solid white;
+    padding: .5rem;
+    border-radius: 20px;
+  }
+  .right-cart{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+}
 
 .prenota-cont::-webkit-scrollbar{
       
@@ -349,14 +378,15 @@ export default {
 
 @media (max-width:$bp1) {.prenota{ width: 100% !important;}}
 .prenota{
+  background-color: #270000;
   position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 69%;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
 
   .prenota-cont{
     overflow: auto;
@@ -366,23 +396,25 @@ export default {
       text-align: center;
       text-transform: uppercase;
       padding: 1rem;
-      font-size: 30px;
+      font-size: 40px;
     }
     
     .cart{
       color: $c-nav-link;
     
-      border: 1px solid $c-nav-link;
-      background-color: $c-header;
+      border: 3px solid white;
+      background-color: #523333;
       max-width: 450px;
       width: 100%;
       padding: .4rem;
       margin: 0 auto;
-      border-radius: 4px;
+      border-radius: 20px;
       .top-cart{
         padding: .2rem;
         @include dfc;
-        justify-content: space-between;
+        justify-content: flex-end;
+        
+        
       }
     }
     
@@ -399,18 +431,18 @@ export default {
   flex-direction: column;
   gap: 1rem;
   .sec-form{
-  border-radius: 4px;
+  border-radius: 20px;
   width: 100%;
-  border: 1px solid $c-nav-link;
-  background-color: $c-footer-nav;
+  border: 3px solid white;
+  background-color: #523333;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
   input{
     background-color: #fe425200;
-    border: 1px solid $c-nav-link;
-    color: $c-nav-link;
+    border: 2px solid white;
+    color: white;
     padding: 1rem;
     border-radius: .4em
   }
@@ -423,11 +455,12 @@ export default {
   
 }
 .btn-send{
-      border: 1px solid $c-nav-link;
-      background-color: $c-header;
+      border: 3px solid white;
+      background-color: #270000;
+      border-radius: 20px;
       max-width: 450px;
       width: 100%;
-      padding: .4rem;
+      padding: 1rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 20px;
@@ -480,17 +513,31 @@ export default {
 }
 .item-on{
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
+  align-items: center;
   height: auto;
   opacity: 1;
   transition: all .2s linear .2s;
+  font-size: 20px;
   div{
     width: 45%;
   }
   svg{
     width: 10%;
+    
   }
   
+}
+.condizioni{
+  font-size: 15px;
+  margin: 10px;
+  .top{
+    display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  }
 }
 
 @media (max-width:$bp2) {
@@ -508,7 +555,7 @@ export default {
 
 ::placeholder {
   opacity: 1;
-  color: $c-nav-link;
+  color: white;
 }
 
 #nameError,
@@ -517,8 +564,8 @@ export default {
 #cartError,
 #dateError {
   text-align: center;
-  font-size: 0.8em;
-  color: red;
+  font-size: 1em;
+  color: white;
   margin-top: 0.3rem;
 }
 
