@@ -198,6 +198,7 @@
  <div class="prenota">
     
     <div class="prenota-cont">
+      <img src="src/assets/img/crop.png" alt="" class="bacchette">
       <div class="top-prenota">
         <div class="left-top">
           <h1>Prenota il tuo Asporto</h1>
@@ -312,6 +313,12 @@
       text-transform: uppercase;
       padding: 1rem;
       font-size: 50px;
+    }
+
+    .bacchette{
+      position: fixed;
+      left: 0;
+      bottom: 2;
     }
     
     .top-prenota{

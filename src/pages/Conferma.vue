@@ -228,7 +228,7 @@ export default {
 <template>
  <div class="prenota">
     <div class="prenota-cont">
-
+      <img src="src/assets/img/crop.png" alt="" class="bacchette">
       <h1>COMPLETA IL TUO ORDINE</h1>
 
       <div class="cart">
@@ -399,9 +399,13 @@ export default {
       font-size: 40px;
     }
     
+    .bacchette{
+      position: fixed;
+      left: 0;
+      bottom: 2;
+    }
     .cart{
       color: $c-nav-link;
-    
       border: 3px solid white;
       background-color: #523333;
       max-width: 450px;

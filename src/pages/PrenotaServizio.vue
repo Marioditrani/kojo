@@ -221,7 +221,6 @@ export default {
 
 <template>
   <div class="menu">
-    <sh/>
     <div class="top-menu">
       <h1>Prenota il tuo tavolo</h1>
     </div>
@@ -275,6 +274,14 @@ export default {
         <span>Lascia una nota per il ristorante</span>
         <textarea cols="30" rows="10" v-model="message"></textarea>
       </div>
+      <div class="condizioni">
+          <div class="top">
+            <input type="checkbox">
+            <p>Accetta i termini e le condizioni per il trattamento dei dati</p>
+
+          </div>
+          <div v-if="nameError" id="nameError">{{ nameError }}</div>
+        </div>
 
       <button v-if="!loading"
         class="btn-send"           
@@ -297,18 +304,44 @@ export default {
 
 <style scoped lang="scss">
 @use "../assets/styles/general.scss" as *;
+.menu::-webkit-scrollbar{
+      
+      width: 10px;
+      height: 10px;
+      
+  }
 
+.menu::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $c-header;
+    
+}
+.menu::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: rgba(52, 4, 7, 0.786);
+    
+}
+.menu::-webkit-scrollbar-thumb:hover {
+    border-radius: 20px;
+    background-color: $c-nav-link;
+    border: 2px solid $c-header;
+    
+}
 .menu{
-  height: 96%;
+  overflow: auto;
+  width: 100%;
+  height: 69%;
+  background-color: #270000;
   position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
   .top-menu{
     h1{
       text-align: center;
       text-transform: uppercase;
       padding-top: 2rem;
-      font-size: 30px;
+      font-size: 40px;
+      
     }
   }
 }
@@ -320,6 +353,7 @@ export default {
 
 
 .form{
+  
   max-width: 450px;
   width: 100%;
   margin:  2rem auto;
@@ -327,27 +361,26 @@ export default {
   flex-direction: column;
   gap: 1rem;
   .sec-form{
-    border-radius: 4px;
-    width: 100%;
-    border: 1px solid $c-nav-link;
-    background-color: $c-footer-nav;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-    input{
-      background-color: #fe425200;
-      border: 1px solid $c-nav-link;
-      color: $c-nav-link;
-      padding: 1rem;
-      border-radius: .4em;
-      
-    }
+  border-radius: 20px;
+  width: 100%;
+  border: 3px solid white;
+  background-color: #523333;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  input{
+    background-color: #fe425200;
+    border: 2px solid white;
+    color: white;
+    padding: 1rem;
+    border-radius: .4em
+  }
     textarea{
-      background-color:$c-footer-nav;
+      background-color:#523333;
       resize: none;
       border-radius: .4em;
-      border: 1px solid $c-nav-link;
+      border: 2px solid white;
       padding: 1rem;
     }
   }
@@ -385,16 +418,28 @@ export default {
         padding: 5px;
       }
       }
-  .btn-send{
-    border: 1px solid $c-nav-link;
-    background-color: $c-header;
-    max-width: 450px;
-    width: 100%;
-    padding: .4rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 20px;
-    margin-top: 10px
+      .btn-send{
+      border: 3px solid white;
+      background-color: #270000;
+      border-radius: 20px;
+      max-width: 450px;
+      width: 100%;
+      padding: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 20px;
+      margin-top: 10px
+}
+
+}
+.condizioni{
+  font-size: 15px;
+  margin: 10px;
+  .top{
+    display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
   }
 }
 
@@ -643,4 +688,5 @@ export default {
   flex-wrap: wrap;
   max-width: 900px;
 }
+
 </style>

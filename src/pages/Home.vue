@@ -93,11 +93,14 @@
         
         width: 50%;
         position: relative;
+
+        
         
         .sushi{
             position: absolute;
             left: 30%;
             top: 25%;
+            
         }
         .bac{
             position: absolute;

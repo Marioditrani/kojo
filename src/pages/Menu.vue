@@ -144,24 +144,24 @@
 @use '../assets/styles/general.scss' as *;
 
 
-.menu-cont::-webkit-scrollbar{
+.menu-bottom::-webkit-scrollbar{
       
       width: 10px;
       height: 10px;
       
   }
 
-.menu-cont::-webkit-scrollbar-thumb {
+.menu-bottom::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background: $c-header;
     
 }
-.menu-cont::-webkit-scrollbar-track {
+.menu-bottom::-webkit-scrollbar-track {
     border-radius: 20px;
     background: rgba(52, 4, 7, 0.786);
     
 }
-.menu-cont::-webkit-scrollbar-thumb:hover {
+.menu-bottom::-webkit-scrollbar-thumb:hover {
     border-radius: 20px;
     background-color: $c-nav-link;
     border: 2px solid $c-header;
