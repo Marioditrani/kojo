@@ -1,11 +1,11 @@
 <script >
   
   import AppNav from './components/AppNav.vue'
-  import Appfooter from './components/Appfooter.vue'
+ 
 
 
   export default {
-  components:{  AppNav, Appfooter }
+  components:{  AppNav,  }
   }
 </script>
 
@@ -23,6 +23,9 @@
 
 <style lang="scss">
 @use './assets/styles/general.scss' as *;
+
+
+
 
 
 
