@@ -126,12 +126,12 @@
           
         }
         .chi-siamo{
-          transform:skew(30deg);
+          transform:skew(27deg);
           position: relative;
           bottom: 1px;
-          left: -15px;
+          left: -14px;
           z-index: 1;
-          border-left: 0px;
+          
           
           p{
             transform:skew(-30deg);

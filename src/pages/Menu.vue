@@ -122,7 +122,7 @@
         </div>
         <div class="menu-bottom">
 
-          <div class="card" v-for="item in state.fakemenu[0]">
+          <div class="card" v-for="item in arrProduct">
             <div class="title">{{ item.name }}</div>
             <img src="../assets/img/imgsushi.png" alt="">         <!--state.getImageUrl(item.image)-->
             <div class="c-tp">

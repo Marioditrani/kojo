@@ -24,7 +24,10 @@
 <style lang="scss">
 @use './assets/styles/general.scss' as *;
 
-
+.page{
+  width: 100vw;
+  height: 69%;
+}
 
 
 
