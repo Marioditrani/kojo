@@ -108,7 +108,8 @@
     max-width: 200px;
     position: fixed;
     bottom: 150px;
-    left: -30px;
+    left: -30px; 
+    
     transform: scaleX(-1); 
   }
   .main-about{
