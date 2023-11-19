@@ -98,7 +98,7 @@
   <div class="menu">
     <div class="menu-cont">
       <div class="menu-left">
-        <img src="src/assets/img/crop.png" alt="" class="bac">
+        <img src="../assets/img/crop.png" alt="" class="bac">
         
       </div>
       <div class="menu-right">

@@ -20,10 +20,10 @@
 
 <template>
   <div class="about">
-    <img src="src/assets/img/crop.png" alt="" class="bacchette">
+    <img src="../assets/img/crop.png" alt="" class="bacchette">
     <div class="main-about">
       <div class="top-about">
-        <img src="src/assets/img/cuoco-sushi 1.png" alt="">
+        <img src="../assets/img/cuoco-sushi1.png" alt="">
         <h1>Chi <br> siamo?</h1>
       </div>
       <div class="post-container">
@@ -35,7 +35,7 @@
               Esplorate le radici profonde della cucina cinese attraverso piatti come il "Jiaozi", ravioli tradizionali cinesi, riempiti di sapori autentici che risalgono a generazioni. Dall'agrodolce.
             </p>
           </div>
-          <img src="src/assets/img/cuochi-sushi-2 1.png" alt="">
+          <img src="../assets/img/cuochi-sushi-21.png" alt="">
         </div>
         <div class="post">
           
@@ -45,7 +45,7 @@
               Esplorate le radici profonde della cucina cinese attraverso piatti come il "Jiaozi", ravioli tradizionali cinesi, riempiti di sapori autentici che risalgono a generazioni. Dall'agrodolce.
             </p>
           </div>
-          <img src="src/assets/img/cuochi-sushi-2 1.png" alt="">
+          <img src="../assets/img/cuochi-sushi-21.png" alt="">
         </div>
         
         
@@ -109,7 +109,7 @@
     position: fixed;
     bottom: 150px;
     left: -30px; 
-    
+
     transform: scaleX(-1); 
   }
   .main-about{

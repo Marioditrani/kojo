@@ -23,8 +23,8 @@
     <div class="cont">
       <div class="card1">
         <div class="card1-left">
-          <img src="src/assets/img/sushi.png" alt="" class="sushi">
-            <img src="src/assets/img/crop.png" alt="" class="bac">
+          <img src="../assets/img/sushi.png" alt="" class="sushi">
+            <img src="../assets/img/crop.png" alt="" class="bac">
         </div>
         <div class="card1-right">
           <h1>CONTATTI</h1>
@@ -64,7 +64,7 @@
         </div>
         <div class="card2-right">
             <h1>DOVE TROVARCI</h1>
-            <img src="src/assets/img/maps.png" alt="">
+            <img src="../assets/img/maps.png" alt="">
         </div>
 
       </div>

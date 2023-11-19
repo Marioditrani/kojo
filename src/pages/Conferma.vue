@@ -228,7 +228,7 @@ export default {
 <template>
  <div class="prenota">
     <div class="prenota-cont">
-      <img src="src/assets/img/crop.png" alt="" class="bacchette">
+      <img src="../assets/img/crop.png" alt="" class="bacchette">
       <h1>COMPLETA IL TUO ORDINE</h1>
 
       <div class="cart">

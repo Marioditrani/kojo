@@ -198,7 +198,7 @@
  <div class="prenota">
     
     <div class="prenota-cont">
-      <img src="src/assets/img/crop.png" alt="" class="bacchette">
+      <img src="../assets/img/crop.png" alt="" class="bacchette">
       <div class="top-prenota">
         <div class="left-top">
           <h1>Prenota il tuo Asporto</h1>
@@ -239,7 +239,7 @@
       <div class="card-wrap"  v-for="item in arrProduct" :key="item.id">
         <div class="card">
           <div class="title">{{ item.name }}</div>
-        <img src="src/assets/img/imgsushi.png" alt="">
+        <img src="../assets/img/imgsushi.png" alt="">
         <div class="c-tp">
           <div class="tags"> <span>{{fixtag(item.tags) }}</span></div>
           <div class="price">{{ getPrice(item.price) }}</div>

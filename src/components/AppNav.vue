@@ -25,7 +25,8 @@
 <template>
   <div class="nav">
     <div class="left-nav">
-      <img src="src/assets/img/logo_kojo.jpg" alt="">
+      <div class="img"></div>
+      <img src="../assets/img/logo_kojo.jpg" alt="">
     </div>
 
     <div class="triangolo">

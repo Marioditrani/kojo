@@ -28,8 +28,8 @@ export default {
 <template>
     <div class="home">
         <div class="home-left">
-            <img src="src/assets/img/sushi.png" alt="" class="sushi">
-            <img src="src/assets/img/crop.png" alt="" class="bac">
+            <img src="../assets/img/sushi.png" alt="" class="sushi">
+            <img src="../assets/img/crop.png" alt="" class="bac">
         </div>
         <div class="home-right">
             <h1>SCOPRI LA VERA CUCINA ORIENTALE E PROVA IL NOSTRO SUSHI</h1>
