@@ -258,7 +258,7 @@
   
       </div>
     </div>
-    <Appfooter />
+    
   </div>
 </template>
 
