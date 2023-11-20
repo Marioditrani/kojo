@@ -2,9 +2,10 @@
 import { state } from '../state.js'
 import axios from 'axios';
 import AppNav from '../components/AppNav.vue'
+import sHeader from '../components/SHeader.vue'
 
 export default {
-    components: { AppNav },
+    components: { AppNav, sHeader },
 
     data() {
         return {
@@ -26,10 +27,10 @@ export default {
 </script>
 
 <template>
+    
     <div class="home">
         <div class="home-left">
-            <img src="../assets/img/sushi.png" alt="" class="sushi">
-            <img src="../assets/img/crop.png" alt="" class="bac">
+            <img src="../assets/img/sushibac.png" alt="" class="sushi">
         </div>
         <div class="home-right">
             <h1>SCOPRI LA VERA CUCINA ORIENTALE E PROVA IL NOSTRO SUSHI</h1>
@@ -83,27 +84,22 @@ export default {
     position: fixed;
     bottom: 0;
     display: flex;
+    
 
     .home-left {
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 300px;
         width: 50%;
         position: relative;
 
-
-
         .sushi {
-            position: absolute;
-            left: 30%;
-            top: 25%;
+            
 
         }
 
-        .bac {
-            position: absolute;
-            left: 65%;
-            top: 30%;
-            transform: rotate(-40deg);
-        }
+       
 
     }
 
@@ -138,4 +134,57 @@ export default {
 }
 
 
-@media (max-width:1600px) {}</style>
+@media (max-width:1600px) {
+    
+    .sushi {
+            
+        min-width: 800px;
+
+        }
+}
+@media (max-width:1350px) {
+    
+    .home{
+
+        .home-left{
+            padding-left: 100px;
+            .sushi {
+                    
+                min-width: 700px;
+        
+                }
+        }
+    }
+}
+@media (max-width:1000px) {
+    
+    .home{
+
+        .home-left{
+            padding-left: 100px;
+            .sushi {
+                    
+                min-width: 600px;
+        
+                }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    
+    .home{
+        flex-direction: column;
+        .home-left{
+            
+            .sushi {
+                    
+                min-width: 600px;
+
+                }
+        }
+    }
+}
+
+
+</style>

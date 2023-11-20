@@ -569,7 +569,7 @@ export default {
 #dateError {
   text-align: center;
   font-size: 1em;
-  color: white;
+  color: red;
   margin-top: 0.3rem;
 }
 
