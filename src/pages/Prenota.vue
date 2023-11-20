@@ -16,9 +16,18 @@
             phone:'',
             time:'',
             catinput:0,
+            cartinput:0,
         }
     },
     methods:{
+      cartopen(){
+        if (this.cartinput){
+          this.cartinput = 0
+        }else{
+          this.cartinput = 1
+        }
+        console.log(this.cartinput)
+      },
       catopen(){
         if (this.catinput){
           this.catinput = 0
@@ -212,23 +221,33 @@
               <span @click="catopen(catinput)" :class="actvcat == cat.id ? 'span-on' : '' ">{{ cat.name }}</span>
             </div>
           </div>
-          <div class="cart">
-            <div class="top-cart" @click="opencart">
+          <div class="cart-close" @click="cartopen(cartinput)" :class="cartinput ?  'cat-off': 'cat-on'">
+            <div class="img-cart">
               <svg   xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
-              <!--<div class="state.totcart">
-                {{ getPrice(state.totCart)}}
-              </div>
-              -->
+            </div>
+            
+          </div>
+          <div class="cart" :class="cartinput ?  'cat-on': 'cat-off'">
+            <div class="img-cartclose">
+              <svg xmlns="http://www.w3.org/2000/svg"  @click="cartopen(cartinput)" :class="cartinput ?  'cat-on': 'cat-off'"    width="30" height="30" fill="currentColor" class="bi bi-cart-x-fill" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708z"/></svg>
+
             </div>
             <div :class="state.sideCartValue ? 'content-cart' : 'ccoff'" >
               <div class="span" v-if="!state.arrCart.length && !state.sideCartValue">Il carrello è vuoto</div>
               <div v-for="item in state.arrCart" :class="state.sideCartValue ?  'item-off' : 'item-on'" :key="item.id">
                 <div>{{ item.title }}</div>
-                <div>* {{ item.counter }}</div>
                 <div>{{ getPrice(item.totprice) }}</div>
+                <div>x {{ item.counter }}</div>
                 <svg :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on'" @click="removeItem(item.title)"  style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="current-color" class="bi bi-trash" viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" fill="white"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" fill="white"></path> </svg>
               </div>
-              <router-link :to="{ name: 'conferma' }" v-if="state.arrCart.length && !state.sideCartValue" class="next">Completa la tua ordinazione</router-link>
+              <div class="bottom-cart">
+                <router-link :to="{ name: 'conferma' }" v-if="state.arrCart.length && !state.sideCartValue" class="next">Completa ordine</router-link>
+                <div class="tot">
+                  <span>TOTALE</span>
+                    {{ getPrice(state.totCart)}}
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -451,6 +470,12 @@
 }
 
 /*** */
+
+.right-top{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .one-category{
   background-color: #523333;
   width: 350px;
@@ -460,13 +485,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  padding: 1.5em 1em;
+  
   margin: 0 auto;
   z-index: 10;
   position: relative;
   border: 5px solid white;
   border-radius: 50px;
-  margin: 40px ;
+  margin: 40px 0;
   span{
     font-size: 30px;
     
@@ -540,11 +565,48 @@
 
 .cat-off{display: none;}
 /***** */
-.cart{
-  color: $c-nav-link;
 
-  border: 1px solid $c-nav-link;
-  background-color: $c-header;
+.cart-close{
+  display: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+  
+  .img-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #523333;
+    width: 70px;
+    height: 70px;
+    border: 3px solid white;
+    border-radius: 50px;
+  }
+}
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: -40px 50px 100px black ;
+  .img-cartclose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -2px;
+    top: -7px;
+    width: 70px;
+    height: 70px;
+    background-color: #523333;
+    border: 3px solid white;
+    border-radius: 50px;
+    
+  }
+
+  color: $c-nav-link;
+  border: 3px solid white;
+  background-color: #523333;
   max-width: 450px;
   width: 100%;
   border-radius: 50px;
@@ -555,16 +617,26 @@
     @include dfc;
     justify-content: space-between;
   }
+
+  .bottom-cart{
+    display: flex;
+    gap: 2rem;
+
+    .tot{
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 .next{
-    border: 2px solid white;
+    border: 3px solid white;
     text-transform: uppercase;
-    padding: 5px ;
+    padding: 10px ;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 20px;
   }
 .content-cart{
-  width: 100px;
+  width: 10px;
   height: 0;
   padding: 0rem;
   display: flex;
@@ -573,6 +645,7 @@
 }
 .ccoff{
   padding: 2rem;
+  padding-top: 4rem;
   height: 100%;
   display: block;
   display: flex;
@@ -604,6 +677,7 @@
   
 }
 
+.cat-off{display: none;}
 
 @media (max-width:$bp2) {
   .card-wrap{

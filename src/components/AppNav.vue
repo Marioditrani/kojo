@@ -69,6 +69,7 @@
     justify-content: center;
   }
   .triangolo{
+    position: relative;
     width:0;
     border-left: 0px solid transparent;
     border-right: 150px solid transparent;
@@ -126,15 +127,16 @@
           
         }
         .chi-siamo{
-          transform:skew(27deg);
+          transform:skew(26deg);
           position: relative;
           bottom: 1px;
-          left: -14px;
+          left: -13px;
           z-index: 1;
+          border-left: 0px;
           
           
           p{
-            transform:skew(-30deg);
+            transform:skew(-26deg);
             
           }
         }
