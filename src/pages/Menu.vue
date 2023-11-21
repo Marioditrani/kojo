@@ -472,14 +472,22 @@
 }
 
 @media (max-width:$bp2) {
-  .menu-top-respo{
-    width: 90%!important;
-    h1{
-      font-size: 70px!important;
-    }
-
-    .bac-respo{
-      width: 70px!important;
+  .menu-top-left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .menu-top-respo{
+      width: 100%!important;
+      display: flex;
+      justify-content: space-between;
+      h1{
+        font-size: 70px!important;
+        
+      }
+  
+      .bac-respo{
+        width: 70px!important;
+      }
     }
   }
   .menu-cont{
