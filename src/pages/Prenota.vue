@@ -207,6 +207,10 @@
  <div class="prenota">
     
     <div class="prenota-cont">
+      <div class="top-respo">
+        <h1>Prenota il tuo Asporto</h1>
+        <img src="../assets/img/crop.png" alt="" class="bacchette-respo">
+      </div>
       <img src="../assets/img/crop.png" alt="" class="bacchette">
       <div class="top-prenota">
         <div class="left-top">
@@ -255,24 +259,24 @@
       
       <div class="main-prenota">
 
-      <div class="card-wrap"  v-for="item in arrProduct" :key="item.id">
-        <div class="card">
-          <div class="title">{{ item.name }}</div>
-        <img src="../assets/img/imgsushi.png" alt="">
-        <div class="c-tp">
-          <div class="tags"> <span>{{fixtag(item.tags) }}</span></div>
-          <div class="price">{{ getPrice(item.price) }}</div>
-        </div>
-        <div class="add">
-          <div class="sec">
-            <span class="minus"  @click="downCounter(item.id)">-</span>
-            <span class="counter">{{ item.counter }}</span>
-            <span class="plus" @click="upCounter(item.id)" >+</span>
+        <div class="card-wrap"  v-for="item in arrProduct" :key="item.id">
+          <div class="card">
+            <div class="title">{{ item.name }}</div>
+          <img src="../assets/img/imgsushi.png" alt="">
+          <div class="c-tp">
+            <div class="tags"> <span>{{fixtag(item.tags) }}</span></div>
+            <div class="price">{{ getPrice(item.price) }}</div>
           </div>
-         <div class="mybtn" @click="addItem(item.name, item.counter, item.price, item.id)">aggiungi</div>
+          <div class="add">
+            <div class="sec">
+              <span class="minus"  @click="downCounter(item.id)">-</span>
+              <span class="counter">{{ item.counter }}</span>
+              <span class="plus" @click="upCounter(item.id)" >+</span>
+            </div>
+          <div class="mybtn" @click="addItem(item.name, item.counter, item.price, item.id)">aggiungi</div>
+          </div>
         </div>
-       </div>
-      </div>
+        </div>
       
   
       </div>
@@ -318,14 +322,18 @@
   position: fixed;
   bottom: 0;
   left: 0;
-    
+  width: 100vw;
 
   .prenota-cont{
-    
+    width: 100vw;
     background-color: #270000;
     overflow: auto;
     height: 100%;
     padding: 1rem 1rem ;
+
+    .top-respo{
+      display: none;
+    }
     h1{
       text-align: center;
       text-transform: uppercase;
@@ -478,7 +486,6 @@
 .one-category{
   background-color: #523333;
   width: 350px;
-  
   height: 80px;
   display: flex;
   align-items: center;
@@ -696,8 +703,77 @@
   .add{
     flex-direction: column;
     gap: 1rem!important;
-    bottom: -90px!important;
+    bottom: -110px!important;
     left: 0;
   }
+
+  .card-wrap{
+    width: calc((75% - 2rem) / 2)!important;
+  }
+  
+}
+
+@media (max-width:1100px) {
+  .add{
+    flex-direction: column;
+    gap: 1rem!important;
+    bottom: -110px!important;
+    left: 0;
+  }
+
+  .card-wrap{
+    width: 95%!important;
+  }
+  
+  .bacchette{
+    display: none!important;
+  }
+  .left-top{
+    h1{
+      display: none;
+    }
+  }
+
+  .top-respo{
+    width: 70%;
+    display: flex!important;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: auto;
+    h1{
+      text-align: end!important;
+      width: 50%;
+    }
+    
+
+    .bacchette-respo{
+      width: 90px!important;
+      transform: rotateZ(120deg);
+    }
+  }
+  .top-prenota{
+    justify-content: center!important;
+  }
+  .right-top{
+    align-items: center!important;
+  }
+}
+
+@media (max-width:700px) {
+  .card-wrap{
+    width: 95%!important;
+  }
+  h1{
+    font-size: 40px!important;
+    width: 40%!important;
+  }
+ .bacchette-respo{
+  width: 50px!important;
+      
+  }
+
+
+  
+
 }
 </style>

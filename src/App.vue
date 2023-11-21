@@ -12,7 +12,7 @@
 <template>
 
   <div class="container">
-    <AppNav class="appnav"/>
+    
     <router-view class="page"></router-view>
     
   </div>
