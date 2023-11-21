@@ -112,7 +112,7 @@
           </div>
           <div class="menu-top-right">
             <div class="one-category" @click="catopen(catinput)" :class="catinput ? 'cat-off': 'cat-on'">
-              <span>categorie</span>
+              <span>categoriee</span>
             </div>
             <div class="categorie"   :class="catinput ? 'cat-on': 'cat-off'">
               <div v-for="cat in arrCategory" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
