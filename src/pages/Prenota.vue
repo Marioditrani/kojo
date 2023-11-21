@@ -313,7 +313,6 @@
 
 .prenota{
   overflow: hidden;
-  height: 69%;
   display: flex;
   flex-direction: column;
   position: fixed;

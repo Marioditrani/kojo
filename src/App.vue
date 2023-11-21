@@ -25,6 +25,10 @@
 @use './assets/styles/general.scss' as *;
 
 
+.appnav{
+  width: 100vh;
+}
+
 .page{
   width: 100vw;
   height: 70%;

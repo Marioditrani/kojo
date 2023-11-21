@@ -56,7 +56,7 @@
 @use '../assets/styles/general.scss' as *;
 .nav{
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
 
   .left-nav{

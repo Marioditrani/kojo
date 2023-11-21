@@ -188,7 +188,7 @@
     background-color: #270000;
     position: fixed;
     bottom: 0;
-    height: 69%;
+    height: 70%;
     width: 100%;
     padding: 1rem 1rem ;
     
@@ -423,22 +423,22 @@
   }
 }
 @media (max-width:1100px) {
-
+  
   .menu-cont{
     padding-top: 0!important;
   }
     .menu-top{
       flex-direction: column;
       align-items: center;
-       .menu-top-left{
+      .menu-top-left{
         padding: 2rem;
         padding-top: 0;
-
+        
         h1{
           padding-top: 0!important;
           
         }
-
+        
         .menu-top-respo{
           display: flex;
           align-items: center;
@@ -446,19 +446,20 @@
           width: 80%;
           margin: auto;
         }
-       }
+      }
     }
     .menu-bottom{
       margin-top: 10rem;
     }
-  
+    
     .bac-respo{
       display: block!important;
       width: 100px;
       transform: rotateZ(120deg);
     }
-  
-  .card{
+    
+    .card{
+    margin-top: 17rem!important;
     width: 95% !important;
   }
   .menu-left{
@@ -469,5 +470,17 @@
   }
 }
 
+@media (max-width:$bp2) {
+  .menu-top-respo{
+    width: 90%!important;
+    h1{
+      font-size: 70px!important;
+    }
+
+    .bac-respo{
+      width: 70px!important;
+    }
+  }
+}
 
 </style>

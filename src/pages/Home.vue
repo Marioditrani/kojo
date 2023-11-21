@@ -27,7 +27,6 @@ export default {
 </script>
 
 <template>
-    
     <div class="home">
         <div class="home-left">
             <img src="../assets/img/sushibac.png" alt="" class="sushi">
@@ -195,7 +194,6 @@ export default {
         display: none;
     }
     .home-respo{
-        overflow: auto;
         background-color: #270000;
         height: 70%;
         width: 100%;
