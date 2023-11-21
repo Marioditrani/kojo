@@ -195,6 +195,7 @@ export default {
         display: none;
     }
     .home-respo{
+        overflow: auto;
         background-color: #270000;
         height: 70%;
         width: 100%;
