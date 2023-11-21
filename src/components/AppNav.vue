@@ -89,7 +89,7 @@
       height: 100%;
       
       .bg-nav{
-        background-color: red;
+        background-color: #712A2A;
         display: flex;
         justify-content: space-between;
         width: 100%;
