@@ -112,7 +112,7 @@
           </div>
           <div class="menu-top-right">
             <div class="one-category" @click="catopen(catinput)" :class="catinput ? 'cat-off': 'cat-on'">
-              <span>categoriee</span>
+              <span>categorie</span>
             </div>
             <div class="categorie"   :class="catinput ? 'cat-on': 'cat-off'">
               <div v-for="cat in arrCategory" class="category" :class="actvcat == cat.id ? 'category-on' : '' " @click="changeCategory(cat.id)"> 
@@ -224,6 +224,7 @@
         img{
           display: none;
         }
+        
       }
       .menu-bottom{
       height: 72%;
@@ -459,7 +460,7 @@
     }
     
     .card{
-    margin-top: 17rem!important;
+    margin-top: 20rem!important;
     width: 95% !important;
   }
   .menu-left{
@@ -480,6 +481,9 @@
     .bac-respo{
       width: 70px!important;
     }
+  }
+  .menu-cont{
+    width: 100%!important;
   }
 }
 
