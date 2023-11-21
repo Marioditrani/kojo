@@ -41,7 +41,15 @@ export default {
         </div>
     </div>
 
-    .home
+    <div class="home-respo">
+        <div class="main">
+            <h1>SCOPRI LA VERA CUCINA ORIENTALE E PROVA IL NOSTRO SUSHI</h1>
+            <img src="../assets/img/sushibac.png" alt="" class="sushi-respo">
+            <p>SOLO SUL NOSTRO SITO UFFICILAE PUOI TROVARE IL NOSTRO MENU, PERNOTARE UN TAVOLA O ADDIRITTURARA PRENOTARE IL
+                TUO ASPORTO</p>
+            <router-link :to="{ name: 'menu' }" class="btn">Menu</router-link>
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -76,10 +84,12 @@ export default {
     border: 2px solid $c-header;
 
 }
-
+.home-respo{
+    display: none;
+}
 .home {
     background-color: #270000;
-    height: 69%;
+    height: 70%;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -145,7 +155,9 @@ export default {
 @media (max-width:1350px) {
     
     .home{
-
+        h1{
+            font-size: 45px;
+        }
         .home-left{
             padding-left: 100px;
             .sushi {
@@ -159,7 +171,13 @@ export default {
 @media (max-width:1000px) {
     
     .home{
+        h1{
+            font-size: 40px;
+        }
+        p{
+            font-size: 15px!important;
 
+        }
         .home-left{
             padding-left: 100px;
             .sushi {
@@ -174,17 +192,39 @@ export default {
 @media (max-width:900px) {
     
     .home{
-        flex-direction: column;
-        .home-left{
-            
-            .sushi {
-                    
-                min-width: 600px;
+        display: none;
+    }
+    .home-respo{
+        background-color: #270000;
+        height: 70%;
+        width: 100%;
+        margin: auto;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        .main{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .sushi-respo{
+                width: 500px;
+            }
+        }
 
-                }
+        .btn{
+            margin-top: 2rem;
         }
     }
 }
+
+
 
 
 </style>

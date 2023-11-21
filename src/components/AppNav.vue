@@ -29,11 +29,7 @@
       <img src="../assets/img/logo_kojo.jpg" alt="">
     </div>
 
-    <div class="triangolo">
-      <div class="triangolo-right">
-        
-      </div>
-    </div>
+    
   
   
     <div class="right-nav">
@@ -60,7 +56,7 @@
 @use '../assets/styles/general.scss' as *;
 .nav{
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
 
   .left-nav{
@@ -131,7 +127,7 @@
           position: relative;
           bottom: 1px;
           left: -13px;
-          z-index: 1;
+          
           border-left: 0px;
           
           
