@@ -104,7 +104,10 @@
       <div class="menu-right">
         <div class="menu-top">
           <div class="menu-top-left">
-            <h1>Menu</h1>
+            <div class="menu-top-respo">
+              <img src="../assets/img/crop.png" alt="" class="bac-respo">
+              <h1>Menu</h1>
+            </div>
             <p>Le delizie del nostro menu aspettano solo te...</p>
           </div>
           <div class="menu-top-right">
@@ -144,24 +147,24 @@
 @use '../assets/styles/general.scss' as *;
 
 
-.menu-bottom::-webkit-scrollbar{
+.menu-cont::-webkit-scrollbar{
       
       width: 10px;
       height: 10px;
       
   }
 
-.menu-bottom::-webkit-scrollbar-thumb {
+.menu-cont::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background: $c-header;
     
 }
-.menu-bottom::-webkit-scrollbar-track {
+.menu-cont::-webkit-scrollbar-track {
     border-radius: 20px;
     background: rgba(52, 4, 7, 0.786);
     
 }
-.menu-bottom::-webkit-scrollbar-thumb:hover {
+.menu-cont::-webkit-scrollbar-thumb:hover {
     border-radius: 20px;
     background-color: $c-nav-link;
     border: 2px solid $c-header;
@@ -177,9 +180,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  
+  flex-wrap: wrap;
 
   .menu-cont{
+    overflow: auto;
     display: flex;
     background-color: #270000;
     position: fixed;
@@ -187,7 +191,7 @@
     height: 69%;
     width: 100%;
     padding: 1rem 1rem ;
-
+    
     .menu-left{
       width: 10%;
       display: flex;
@@ -216,10 +220,13 @@
           font-size: 25px;
          
         }
+
+        img{
+          display: none;
+        }
       }
       .menu-bottom{
       height: 72%;
-      overflow: auto;
       @include dfc;
       flex-wrap: wrap;
       gap: 1rem;
@@ -404,14 +411,63 @@
 /***** */
 
 
-@media (max-width:$bp2) {
-  .card{
-    width: 95% !important;
-  }
-}
+
 @media (max-width:$bp1) {
   .menu{
     width:100%;
   }
 }
+@media (max-width:1650px) {
+  .card{
+    width: calc((75% - 2rem) / 2)!important;
+  }
+}
+@media (max-width:1100px) {
+
+  .menu-cont{
+    padding-top: 0!important;
+  }
+    .menu-top{
+      flex-direction: column;
+      align-items: center;
+       .menu-top-left{
+        padding: 2rem;
+        padding-top: 0;
+
+        h1{
+          padding-top: 0!important;
+          
+        }
+
+        .menu-top-respo{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 80%;
+          margin: auto;
+        }
+       }
+    }
+    .menu-bottom{
+      margin-top: 10rem;
+    }
+  
+    .bac-respo{
+      display: block!important;
+      width: 100px;
+      transform: rotateZ(120deg);
+    }
+  
+  .card{
+    width: 95% !important;
+  }
+  .menu-left{
+    display: none!important;
+  }
+  .menu-right{
+    width: 100%!important;
+  }
+}
+
+
 </style>

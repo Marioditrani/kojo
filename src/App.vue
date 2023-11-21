@@ -30,6 +30,13 @@
 }
 
 
+@media (max-width:1100px) {
+    
+    .page{
+      height: 80%!important;
+    }
+}
+
 
 
 </style>

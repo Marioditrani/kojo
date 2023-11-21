@@ -39,9 +39,9 @@ export default {
             <router-link :to="{ name: 'menu' }" class="btn">Menu</router-link>
 
         </div>
-
-
     </div>
+
+    .home
 </template>
 
 <style scoped lang="scss">
