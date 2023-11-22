@@ -19,6 +19,7 @@
 </script>
 
 <template>
+  <sh/>
   <div class="contatti">
     <div class="cont">
       <div class="card1">
@@ -226,22 +227,7 @@ img{
   }
 }
 
-.btn-menu{
-  display: none;
-  
-  text-transform: uppercase;
-  background-color: $c-footer-nav;
-  color: $c-nav-link;
-  font-weight: bolder;
-  width: fit-content;
-  padding: 1rem 1rem;
-  border-radius: 0 0 20px 20px ;
-  
-  position: absolute;
-  left: 10px;
-  top: 0px;
 
-}
 @media (max-width:$bp1) {.btn-menu{display:block;}}
 
 </style>

@@ -204,7 +204,8 @@
 </script>
 <!-- :class="state.sideCartValue ?  'sub-item-off' : 'sub-item-on tag'" -->
 <template>
- <div class="prenota">
+  <div class="prenota">
+   <sh class="sh"/>
     
     <div class="prenota-cont">
       <div class="top-respo">
@@ -315,6 +316,11 @@
 }
 .hd{box-shadow: 10px 10px 10px black; }
 
+.sh{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .prenota{
   overflow: hidden;
   display: flex;

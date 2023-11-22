@@ -226,6 +226,7 @@ export default {
 </script>
 
 <template>
+  <sh/>
  <div class="prenota">
     <div class="prenota-cont">
       <img src="../assets/img/crop.png" alt="" class="bacchette">

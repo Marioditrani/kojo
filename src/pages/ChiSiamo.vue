@@ -19,6 +19,7 @@
 </script>
 
 <template>
+  <sh/>
   <div class="about">
     <img src="../assets/img/crop.png" alt="" class="bacchette">
     <div class="main-about">
@@ -62,22 +63,6 @@
 <style scoped lang="scss">
 @use '../assets/styles/general.scss' as *;
 
-.btn-menu{
-  display: none;
-  
-  text-transform: uppercase;
-  background-color: $c-footer-nav;
-  color: $c-nav-link;
-  font-weight: bolder;
-  width: fit-content;
-  padding: 1rem 1rem;
-  border-radius: 0 0 20px 20px ;
-  
-  position: absolute;
-  left: 10px;
-  top: 0px;
-
-}
 @media (max-width:$bp1) {.btn-menu{display:block;}}
 .main-about::-webkit-scrollbar{
   width: 10px;

@@ -27,6 +27,7 @@ export default {
 </script>
 
 <template>
+    <sHeader/>
     <div class="home">
         <div class="home-left">
             <img src="../assets/img/sushibac.png" alt="" class="sushi">

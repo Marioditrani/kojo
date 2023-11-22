@@ -220,6 +220,7 @@ export default {
 </script>
 
 <template>
+  <sh/>
   <div class="menu">
     <div class="top-menu">
       <h1>Prenota il tuo tavolo</h1>

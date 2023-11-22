@@ -5,7 +5,7 @@
   import AppNav from '../components/AppNav.vue'
 
   export default {
-    components:{AppNav},
+    components:{AppNav, sh},
 
     data(){
         return{     
@@ -95,6 +95,7 @@
 </script>
 
 <template>
+  <sh/>
   <div class="menu">
     <div class="menu-cont">
       <div class="menu-left">

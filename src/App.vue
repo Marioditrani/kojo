@@ -12,7 +12,7 @@
 <template>
 
   <div class="container">
-    
+    <AppNav class="appnav"/>
     <router-view class="page"></router-view>
     
   </div>
@@ -26,7 +26,8 @@
 
 
 .appnav{
-  width: 100vh;
+  width: 100vw;
+  height: 20vh;
 }
 
 .page{
