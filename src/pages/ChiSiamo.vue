@@ -24,8 +24,8 @@
     <img src="../assets/img/crop.png" alt="" class="bacchette">
     <div class="main-about">
       <div class="top-about">
-        <img src="../assets/img/cuoco-sushi1.png" alt="">
-        <h1>Chi <br> siamo?</h1>
+        <img src="../assets/img/cuoco-sushi1.png" alt="" class="cuoco1">
+        <h1>Chi  siamo?</h1>
       </div>
       <div class="post-container">
         <div class="post">
@@ -186,6 +186,38 @@
     }
   }
 }
+
+@media (max-width:1100px){
+  .main-about{
+    width: 90%!important;
+    
+  }
+  .bacchette{
+    max-width: 150px!important;
+    left: -50px!important;
+  }
+}
+@media (max-width:850px){
+
+  .about{
+
+    .main-about{
+  
+      .top-about{
+        .cuoco1{
+          width: 200px!important;
+          position: relative;
+          z-index: 1;
+        }
+        h1{
+          font-size: 70px;
+        }
+      }
+    }
+  }
+}
+
+
 
 
 </style>

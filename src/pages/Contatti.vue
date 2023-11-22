@@ -65,7 +65,7 @@
         </div>
         <div class="card2-right">
             <h1>DOVE TROVARCI</h1>
-            <img src="../assets/img/maps.png" alt="">
+            <a href="https://www.google.com/maps/place/Kojo+Sushi/@43.5855969,13.308124,17.75z/data=!4m6!3m5!1s0x132d9d63861ba9c3:0x9a352a43c5be1c0e!8m2!3d43.5851992!4d13.3073426!16s%2Fg%2F11kjgq2ccy?hl=it&entry=ttu"><img src="../assets/img/maps.png" alt=""></a>
         </div>
 
       </div>

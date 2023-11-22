@@ -103,7 +103,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: $c-nav;
+  background-color: #270000;
   width: 100%;
   height: 100%;
   transition: all .3s linear;
@@ -140,7 +140,7 @@
 
     text-transform: uppercase;
     line-height: 2rem;
-    color: $c-nav-link;
+    color: white;
     font-family: 'Gabarito', cursive;
     font-size: 1.8rem;
   }
